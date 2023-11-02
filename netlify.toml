@@ -1,0 +1,11 @@
+[[redirects]]
+    from = "https://visuallysynced.xyz/BypassDirect"
+    to = "https://BypassDirect.visuallysynced.xyz/"
+    status = 301
+    force = true
+    
+[[redirects]]
+    from = "/gh/*"
+    to = "https://github.com/visuallysynced/:splat"
+    status = 301
+    force = true

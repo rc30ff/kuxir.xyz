@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #131313; 
+    color: #ddd; 
+}
+
+header {
+    background: #1C1C1C; 
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+a {
+    text-decoration: none;
+}
+section {
+    margin-left: 15px;
+    margin-top: 15px;
+    border-radius: 15px;
+    padding: 20px;
+    background: #1E1E1E; 
+}
+
+section#contact {
+    background: #1E1E1E;
+    color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+section#contact a {
+    color: rgb(211, 211, 211);
+    transition: color 0.3s;
+}
+
+section#contact a:hover {
+    color: rgb(133, 133, 133);
+}
+.project-box {
+    background: #242424;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-decoration: none; 
+    display: block; 
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.project-box a {
+    color: #fff;
+    padding: 0; 
+    margin: 0; 
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.project-box a:hover {
+    color: rgb(185, 185, 185); 
+}
+
+.project-box:hover {
+    transform: scale(102%); 
+}
+
+.modern-input.active {
+    border-bottom: 2px solid #fff;
+    transition: border-bottom 0.2s ease;
+}
+
+/* Blinking animation for the cursor */
+@keyframes blink {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.modern-input.active::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 16px;
+    animation: blink 0.8s infinite;
+}
