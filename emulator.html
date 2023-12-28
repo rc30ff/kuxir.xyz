@@ -1,0 +1,143 @@
+<html><head>
+        <title>EmulatorJS</title>
+
+        <link rel="icon" href="https://artclass.site/service/hvtrs8%2F-dgmm.gmwlctmrhs%2Copg-dmcq%2Fdatiaol.kcm" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon" __uv-attr-href="docs/favicon.ico">
+        <meta name="viewport" content="width = device-width, initial-scale = 1">
+
+        <style>body,html{height:100%}body{font-family:monospace;font-weight:bold;font-size:20px;margin:0;overflow:hidden;background-color:#222}body,#box{display:flex;align-items:center;justify-content:center}#box{color:#aaa;height:20em;width:30em;max-width:80%;max-height:80%;background-color:#333;border-radius:0.4em;border:2px solid #555;position:relative;flex-direction:column;transition-duration:0.2s;overflow:hidden}#box:hover,#box[drag]{border-color:#38f;color:#ddd}#input{cursor:pointer;position:absolute;left:0;top:0;width:100%;height:100%;opacity:0}#display{width:100%;height:100%}select,button{padding:0.6em 0.4em;margin:0.5em;width:15em;max-width:100%;font-family:monospace;font-weight:bold;font-size:16px;background-color:#444;color:#aaa;border-radius:0.4em;border:1px solid #555;cursor:pointer;transition-duration:0.2s}select:hover,button:hover{background-color:#666;color:#ddd}</style>
+    </head>
+
+    <body>
+        <div id="box">
+            <input type="file" id="input">
+            Drag ROM file or click here
+        </div>
+
+        <script>
+            input.onchange = async () => {
+                const url = new Blob([input.files[__uv.$wrap((0))]])
+                const parts = input.files[__uv.$wrap((0))].name.split(".")
+
+                const core = await (async (ext) => {
+                    if (["fds", "nes", "unif", "unf"].includes(ext))
+                        return "nes"
+
+                    if (["smc", "fig", "sfc", "gd3", "gd7", "dx2", "bsx", "swc"].includes(ext))
+                        return "snes"
+
+                    if (["z64", "n64"].includes(ext))
+                        return "n64"
+
+                    if (["pce"].includes(ext))
+                        return "pce"
+
+                    if (["ngp", "ngc"].includes(ext))
+                        return "ngp"
+
+                    if (["ws", "wsc"].includes(ext))
+                        return "ws"
+
+                    if (["col", "cv"].includes(ext))
+                        return "coleco"
+
+                    if (["d64"].includes(ext))
+                        return "vice_x64"
+
+                    if (["nds", "gba", "gb", "z64", "n64"].includes(ext))
+                        return ext
+
+                    return await new Promise(resolve => {
+                        const cores = {
+                            "Nintendo 64": "n64",
+                            "Nintendo Game Boy": "gb",
+                            "Nintendo Game Boy Advance": "gba",
+                            "Nintendo DS": "nds",
+                            "Nintendo Entertainment System": "nes",
+                            "Super Nintendo Entertainment System": "snes",
+                            "PlayStation": "psx",
+                            "Virtual Boy": "vb",
+                            "Sega Mega Drive": "segaMD",
+                            "Sega Master System": "segaMS",
+                            "Sega CD": "segaCD",
+                            "Atari Lynx": "lynx",
+                            "Sega 32X": "sega32x",
+                            "Atari Jaguar": "jaguar",
+                            "Sega Game Gear": "segaGG",
+                            "Sega Saturn": "segaSaturn",
+                            "Atari 7800": "atari7800",
+                            "Atari 2600": "atari2600",
+                            "NEC TurboGrafx-16/SuperGrafx/PC Engine": "pce",
+                            "NEC PC-FX": "pcfx",
+                            "SNK NeoGeo Pocket (Color)": "ngp",
+                            "Bandai WonderSwan (Color)": "ws",
+                            "ColecoVision": "coleco",
+                            "Commodore 64": "vice_x64"
+                        }
+
+                        const button = document.createElement("button")
+                        const select = document.createElement("select")
+
+                        for (const type in cores) {
+                            const option = document.createElement("option")
+
+                            option.value = cores[__uv.$wrap((type))]
+                            option.textContent = type
+                            select.appendChild(option)
+                        }
+
+                        button.onclick = () => resolve(select[__uv.$wrap((select.selectedIndex))].value)
+                        button.textContent = "Load game"
+                        box.innerHTML = ""
+
+                        box.appendChild(select)
+                        box.appendChild(button)
+                    })
+                })(parts.pop())
+
+                const div = document.createElement("div")
+                const sub = document.createElement("div")
+                const script = document.createElement("script")
+
+                sub.id = "game"
+                div.id = "display"
+
+                box.remove()
+                div.appendChild(sub)
+                document.body.appendChild(div)
+
+                window.EJS_player = "#game";
+                window.EJS_gameName = parts.shift();
+                window.EJS_biosUrl = "";
+                window.EJS_gameUrl = url;
+                window.EJS_core = core;
+                window.EJS_pathtodata = "data/";
+                window.EJS_startOnLoaded = true;
+
+                if (window.__uv$setSource(__uv).__uv$location.hostname === "demo.emulatorjs.org") {
+                    window.EJS_AdUrl = "https://ads.emulatorjs.org/";
+                    window.EJS_ready = function() {
+                        detectAdBlock("data:text/html;base64,PGh0bWw+PHN0eWxlPiNhZGJsb2Nre2JhY2tncm91bmQtY29sb3I6cmdiYSgwLDAsMCwuOCk7cG9zaXRpb246Zml4ZWQ7d2lkdGg6MTAwJTtoZWlnaHQ6MTAwJTt0b3A6MDtsZWZ0OjA7ei1pbmRleDoxMDAwO3RleHQtYWxpZ246Y2VudGVyO2NvbG9yOiNmZmZ9Ym9keSxodG1se2JhY2tncm91bmQtY29sb3I6dHJhbnNwYXJlbnR9PC9zdHlsZT48Ym9keSBzdHlsZT0ibWFyZ2luOjAiPjxkaXYgaWQ9ImFkYmxvY2siPjxoMT5IaSBBZGJsb2NrIFVzZXIhPC9oMT48cD5BZHMgb24gdGhpcyBwYWdlIG1heSBjb21lIGFuZCBnbyBkZXBlbmRpbmcgb24gaG93IG1hbnkgcGVvcGxlIGFyZSBmdW5kaW5nIHRoaXMgcHJvamVjdC48YnI+WW91IGNhbiBoZWxwIGZ1bmQgdGhpcyBwcm9qZWN0IG9uPGEgaHJlZj0iaHR0cHM6Ly9wYXRyZW9uLmNvbS9FbXVsYXRvckpTIj5wYXRyZW9uPC9hPjwvcD48L2Rpdj48L2JvZHk+PC9odG1sPg==");
+                    }
+                }
+                
+                script.src = "data/loader.js";
+                document.body.appendChild(script);
+            }
+            function detectAdBlock(url) {
+                let adBlockEnabled = false;
+                try {
+                    window.EJS_AdUrl = document.querySelector('iframe[src="'+window.EJS_AdUrl+'"]').src;
+                } catch (e) {
+                    adBlockEnabled = true;
+                }
+                if (adBlockEnabled) {
+                    window.EJS_adBlocked(url);
+                }
+            }
+            box.ondragover = () => box.setAttribute("drag", true);
+            box.ondragleave = () => box.removeAttribute("drag");
+        </script>
+    <script defer="" src="https://artclass.site/service/hvtrs8%2F-svavia.almuffnapeknqiehvs%2Ccmm-bgaaol.oil.hs-v%3A4c3c4210dg96cg1c6%3A6%60a%3Ac365c15%3Bc36%3B6%3B718%3B3115" __uv-attr-integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon="{&quot;rayId&quot;:&quot;83ca815c2cd23178&quot;,&quot;version&quot;:&quot;2023.10.0&quot;,&quot;r&quot;:1,&quot;token&quot;:&quot;192fdaadd1094fdfa2eb6daf77e04988&quot;,&quot;b&quot;:1}" __uv-attr-crossorigin="anonymous" __uv-attr-src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"></script>
+
+
+</body></html>
