@@ -1,116 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Hack&display=swap');
+
+* {
+    scroll-behavior: smooth;
+}
+@media only screen and (max-width: 600px) {
+    body {
+      font-size: 12px;
+    }
+
+    h2 {
+      padding-top: 20px;
+      padding-left: 5px;
+      font-size: 1.5em;
+    }
+
+    p {
+      padding-left: 10px;
+      font-size: 0.9em;
+    }
+
+    a {
+      font-size: 0.9em;
+    }
+
+    header {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 10px; 
+    }
+
+    .logo h1 {
+      font-size: 1.5em; 
+    }
+
+    nav ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    .project-box {
+      padding-left: 15px;
+    }
+
+    .project-box a {
+      font-size: 0.9em;
+    }
+
+    footer {
+      padding-top: 20px;
+    }
+
+    footer p {
+      margin-top: 20px;
+      padding-bottom: 10px;
+    }
+  }
 body {
-    font-family: Arial, sans-serif;
+    background-color: #101010;
+    color: #e06c75;
+    font-family: 'Hack', monospace; 
+}
+body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
-    background: #131313; 
-    color: #ddd; 
+}
+
+h2 {
+    padding-top: 30px;
+    padding-left: 10px;
+}
+
+p {
+    padding-left: 15px;
 }
 
 header {
-    background: #1C1C1C; 
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #131313;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
+    padding: 15px 20px;
 }
 
-h1 {
-    font-size: 2em;
-    margin: 0;
+.logo h1 {
+    font-size: 24px;
 }
+
 
 nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
 }
 
-nav li {
-    display: inline-block;
-    margin: 0 10px;
+nav ul li {
+    margin-right: 20px;
 }
 
-nav a {
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
     text-decoration: none;
-    color: #ddd;
-    transition: color 0.3s;
+    color: #ff6969;
+    font-size: 16px;
+    transition: color 0.4s ease-in-out; 
 }
 
-nav a:hover {
-    color: #fff;
+nav ul li a:hover {
+    color: #ff0000; 
 }
+
 a {
     text-decoration: none;
-}
-section {
-    margin-left: 15px;
-    margin-top: 15px;
-    border-radius: 15px;
-    padding: 20px;
-    background: #1E1E1E; 
+    color: #ff6969;
 }
 
-section#contact {
-    background: #1E1E1E;
-    color: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    margin-top: 15px;
-}
-
-section#contact a {
-    color: rgb(211, 211, 211);
-    transition: color 0.3s;
-}
-
-section#contact a:hover {
-    color: rgb(133, 133, 133);
-}
 .project-box {
-    background: #242424;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-decoration: none; 
-    display: block; 
-    transition: transform 0.3s, color 0.3s;
-    cursor: pointer;
+  padding-left: 25px;
+  transition: transform 0.3s; 
 }
 
 .project-box a {
-    color: #fff;
-    padding: 0; 
-    margin: 0; 
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.project-box a:hover {
-    color: rgb(185, 185, 185); 
+  padding: 0; 
+  color: #df3341;
+  margin: 0; 
+  text-decoration: none;
+  transition: color 0.3s; 
 }
 
 .project-box:hover {
-    transform: scale(102%); 
+  color: #ff0000;  
+  transform: scale(1.02); 
 }
 
-.modern-input.active {
-    border-bottom: 2px solid #fff;
-    transition: border-bottom 0.2s ease;
+/* Existing CSS code */
+/* ... */
+
+/* Add padding to h2 within the Contacts/Socials section */
+/* Existing CSS code */
+/* ... */
+
+/* Target the footer and add padding to <p> elements */
+footer {
+    padding-top: 40px;
 }
 
-/* Blinking animation for the cursor */
-@keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-.modern-input.active::after {
-    content: '|';
-    display: inline-block;
-    margin-left: 5px;
-    font-size: 16px;
-    animation: blink 0.8s infinite;
+footer p {
+    margin-top: 40px; /* Add margin instead of padding */
+    padding-bottom: 20px;
 }
