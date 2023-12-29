@@ -1,71 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-    <title>Kuxir's wesbite</title>
-    <meta content="Homepage" property="og:title" />
-    <meta content="The main directory of this website." property="og:description" />
-    <meta content="https://embed.com/kuxir.xyz" property="og:url" />
-    <meta content="https://embed.com/embedimage.png" property="og:image" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Kuxir's Personal Website">
-    <meta name="keywords" content="Personal Website, Website, Personal, VisuallySynced">
-    <meta name="author" content="VisuallySynced">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <title>Kuxir's website</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+@import url('https://fonts.googleapis.com/css2?family=Hack&display=swap');
 
-</head>
-<body class="dark-mode">
-    <header>
-        <h1>Kuxir</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="/blog">About</a></li>
-                <li><a href="https://discord.gg/eGX6FQdpWp">Discord Server</a></li>
-                <li><a href="https:/github.com/luigigeek12/kuxir.xyz">Website source</a></li>
-            </ul>
-        </nav>
-    </header>
+* {
+    scroll-behavior: smooth;
+}
 
-    <section>
-        <h2>About</h2>
-        <p>Hello, I'm Kuxir. I love making music, projects, and play around with computers. I'm known as DJ RT1 and luigigeek12.</p>
-    </section>
+body {
+    background-color: #101010;
+    color: #e06c75;
+    font-family: 'Hack', monospace;
+    text-align: center; /* Center all text in the body */
+}
 
-    <section>
-        <h2>Projects</h2>
-        <div class="project-box"> 
-            <a href="https://jeuxdebloques.online/">
-                <h3>Jeux débloqués</h3>
-                <p>A portal to my real game website.</p>
-            </a>
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
 
-        </div>
-        <div class="project-box">
-            <a href="https://tiktok.com/@dj_rt1_/">
-                <h3>Tiktok</h3>
-                <p>My tiktok account.</p>
-            </a>
-        </div>
-        
-        <div class="project-box">
-            <a href="https://kuxir.xyz/directories">
-                <h3>Directories</h3>
-                <p>All directories on this website.</p>
-            </a>
-        </div>
-        
-    </section>
+h2 {
+    padding-top: 30px;
+    padding-left: 10px;
+    text-align: left; /* Align h2 text to the left */
+}
 
-    <section id="contact">
-        <h2>Contact</h2>
-        <p><i class="fab fa-discord"></i> Discord: djrt1</p>
-        <p><i class="fab fa-github"></i> Github: <a href="https://github.com/luigigeek12" target="_blank">luigigeek12</a></p>
-    </section>
-    
-</body>
-</html>
+p {
+    padding-left: 15px;
+    text-align: left; /* Align paragraph text to the left */
+}
+
+header {
+    background-color: #131313;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    text-align: left; /* Align header text to the left */
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav
