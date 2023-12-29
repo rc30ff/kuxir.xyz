@@ -1,2 +1,2 @@
 # kuxir.xyz
-THIS IS A WEBSITE SOURCE CODE AND SHOULD NOT BE USED BY ANYONE !
+@VisuallySynced source code (thank you btw)
