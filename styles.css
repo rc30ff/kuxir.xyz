@@ -3,73 +3,79 @@
 * {
     scroll-behavior: smooth;
 }
+
 @media only screen and (max-width: 600px) {
     body {
-      font-size: 12px;
+        font-size: 12px;
+        text-align: center; /* Center all text in small screens */
     }
 
     h2 {
-      padding-top: 20px;
-      padding-left: 5px;
-      font-size: 1.5em;
+        padding-top: 20px;
+        padding-left: 5px;
+        font-size: 1.5em;
+        text-align: left; /* Reset text alignment for h2 */
     }
 
     p {
-      padding-left: 10px;
-      font-size: 0.9em;
+        padding-left: 10px;
+        font-size: 0.9em;
+        text-align: left; /* Reset text alignment for paragraphs */
     }
 
     a {
-      font-size: 0.9em;
+        font-size: 0.9em;
     }
 
     header {
-      text-align: center;
-      padding: 10px 0;
+        text-align: left; /* Reset text alignment for header */
+        padding: 10px 0;
     }
 
     .logo {
-      text-align: center;
-      margin-bottom: 10px; 
+        text-align: center;
+        margin-bottom: 10px;
     }
 
     .logo h1 {
-      font-size: 1.5em; 
+        font-size: 1.5em;
     }
 
     nav ul {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
     }
 
     nav ul li {
-      margin: 10px 0;
+        margin: 10px 0;
     }
 
     .project-box {
-      padding-left: 15px;
+        padding-left: 15px;
     }
 
     .project-box a {
-      font-size: 0.9em;
+        font-size: 0.9em;
     }
 
     footer {
-      padding-top: 20px;
+        padding-top: 20px;
     }
 
     footer p {
-      margin-top: 20px;
-      padding-bottom: 10px;
+        margin-top: 20px;
+        padding-bottom: 10px;
     }
-  }
+}
+
 body {
     background-color: #101010;
     color: #e06c75;
-    font-family: 'Hack', monospace; 
+    font-family: 'Hack', monospace;
 }
+
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -90,12 +96,12 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
+    text-align: left; /* Reset text alignment for header */
 }
 
 .logo h1 {
     font-size: 24px;
 }
-
 
 nav ul {
     list-style: none;
@@ -114,11 +120,11 @@ nav ul li a {
     text-decoration: none;
     color: #ff6969;
     font-size: 16px;
-    transition: color 0.4s ease-in-out; 
+    transition: color 0.4s ease-in-out;
 }
 
 nav ul li a:hover {
-    color: #ff0000; 
+    color: #ff0000;
 }
 
 a {
@@ -127,36 +133,12 @@ a {
 }
 
 .project-box {
-  padding-left: 25px;
-  transition: transform 0.3s; 
+    padding-left: 25px;
+    transition: transform 0.3s;
 }
 
 .project-box a {
-  padding: 0; 
-  color: #df3341;
-  margin: 0; 
-  text-decoration: none;
-  transition: color 0.3s; 
-}
-
-.project-box:hover {
-  color: #ff0000;  
-  transform: scale(1.02); 
-}
-
-/* Existing CSS code */
-/* ... */
-
-/* Add padding to h2 within the Contacts/Socials section */
-/* Existing CSS code */
-/* ... */
-
-/* Target the footer and add padding to <p> elements */
-footer {
-    padding-top: 40px;
-}
-
-footer p {
-    margin-top: 40px; /* Add margin instead of padding */
-    padding-bottom: 20px;
-}
+    padding: 0;
+    color: #df3341;
+    margin: 0;
+    text-decoration: none
